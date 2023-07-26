@@ -1,0 +1,474 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fafafa;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fafafa;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fafafa;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  font-family: 'Manrope', sans-serif;
+}
+
+.Modal {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  border: 0;
+  outline: none;
+  z-index: 20;
+}
+
+.ModalOverlay {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 30;
+}
+
+.toast-position {
+  top: 6rem !important;
+}
+
+.address_street {
+  inline-size: 200px;
+  overflow-wrap: break-word;
+}
+
+.modal-body {
+  /* max-height: calc(100vh - 10px);
+  overflow-y: scroll; */
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.--modal-shade {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.login-icon-dropdown {
+  display: none;
+}
+
+.login-icon-dropdown:hover {
+  display: flex;
+}
+
+.login-icon:hover .login-icon-dropdown {
+  display: flex;
+}
+
+.form-radio-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  color: #cfcfcf;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.form-radio-btn::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #d87d4a;
+}
+
+.form-radio-btn:checked::before {
+  transform: scale(1);
+}
+
+.social-media-icon-facebook {
+  content: url('../public/assets/shared/desktop/icon-facebook.svg');
+}
+
+.social-media-icon-facebook:hover {
+  content: url('../public/assets/shared/desktop/icon-facebook-hover.svg');
+}
+
+.social-media-icon-instagram {
+  content: url('../public/assets/shared/desktop/icon-instagram.svg');
+}
+
+.social-media-icon-instagram:hover {
+  content: url('../public/assets/shared/desktop/icon-instagram-hover.svg');
+}
+
+.social-media-icon-twitter {
+  content: url('../public/assets/shared/desktop/icon-twitter.svg');
+}
+
+.social-media-icon-twitter:hover {
+  content: url('../public/assets/shared/desktop/icon-twitter-hover.svg');
+}
+
+.hero {
+  animation: fadeIn 2s ease-in-out;
+  animation-iteration-count: 1;
+  background-image: url('../public/assets/home/desktop/image-hero.jpg');
+  background-size: 1440px;
+  background-position: -230px -100px;
+  background-repeat: no-repeat;
+}
+
+.zx9-speaker-container {
+  background-image: url('../public/assets/home/desktop/pattern-circles.svg');
+  background-size: 900px;
+  background-position: -135px -30px;
+  background-repeat: no-repeat;
+}
+
+.home-zx7-speaker-bg {
+  background-image: url('../public/assets/home/desktop/image-speaker-zx7.jpg');
+}
+
+.home-yx1-earphones-bg {
+  background-image: url('../public/assets/home/desktop/image-earphones-yx1.jpg');
+}
+
+.about-company-bg {
+  content: url('../public/assets/shared/desktop/image-best-gear.jpg');
+}
+
+.header-columns {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.dropdown-menu {
+  animation: goDown 400ms ease-in-out;
+}
+
+.checkout-modal {
+  animation: goDown 400ms ease-in-out;
+}
+
+.dropdown-menu-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 100px 50px;
+  border-color: transparent transparent white transparent;
+}
+
+/* Loader */
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis-btn {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: auto;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #b3b3b3;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis-btn div {
+  position: absolute;
+  margin-top: -6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: white;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1),
+.lds-ellipsis-btn div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2),
+.lds-ellipsis-btn div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3),
+.lds-ellipsis-btn div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4),
+.lds-ellipsis-btn div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.--reveal {
+  opacity: 0;
+}
+
+/* .--reveal.active {
+  opacity: 1;
+} */
+
+.--reveal.active.--fadeTop {
+  animation-name: fadeInFromBottom;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.--reveal.active.--fadeLeft {
+  animation-name: fadeInFromLeft;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.--reveal.active.--fadeRight {
+  animation-name: enterFromRight;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.--reveal.active.--fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.--reveal.active.--delay-animation-200 {
+  animation-delay: 200ms;
+}
+
+.--reveal.active.--delay-animation-400 {
+  animation-delay: 400ms;
+}
+
+.--scroll-opacity {
+  /* opacity: 1; */
+  /* animation: fadeIn 1s linear infinite;
+  animation-play-state: paused;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; */
+}
+
+.--scroll-opacity.zx9-speaker {
+  /* animation-delay: calc(var(--scroll) * var(--scroll-zx9speaker)* -3.1s); */
+  opacity: var(--scroll-zx9speaker);
+}
+
+.--scroll-opacity.zx7-speaker {
+  /* animation-delay: calc(var(--scroll) * var(--scroll-zx7speaker)* -1.65s); */
+  opacity: var(--scroll-zx7speaker);
+}
+
+.--scroll-opacity.yx1-earphones-1 {
+  /* animation-delay: calc(var(--scroll) * var(--scroll-zx7speaker)* -1.55s); */
+  opacity: var(--scroll-yx1earphones-1);
+}
+
+.--scroll-opacity.yx1-earphones-2 {
+  /* animation-delay: calc(var(--scroll) * var(--scroll-zx7speaker)* -1.2s); */
+  opacity: var(--scroll-yx1earphones-2);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes goDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes enterFromRight {
+  0% {
+    transform: translateX(50px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 967px) {
+  .hero {
+    background-image: url('../public/assets/home/tablet/image-header.jpg');
+    background-size: 768px;
+    background-position: 0px -90px;
+    background-repeat: no-repeat;
+  }
+
+  .header-columns {
+    grid-template-columns: 10% auto max-content;
+  }
+
+  .zx9-speaker-container {
+    background-position: 50% -270px;
+  }
+
+  .home-zx7-speaker-bg {
+    background-image: url('../public/assets/home/tablet/image-speaker-zx7.jpg');
+    background-size: 100%;
+    background-position: 0 -20px;
+    background-repeat: no-repeat;
+  }
+
+  .home-yx1-earphones-bg {
+    background-image: url('../public/assets/home/tablet/image-earphones-yx1.jpg');
+    background-size: cover;
+  }
+
+  .about-company-bg {
+    content: url('../public/assets/shared/tablet/image-best-gear.jpg');
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    background-image: url('../public/assets/home/mobile/image-header.jpg');
+    background-size: 480px auto;
+    background-position: 50% -135px;
+    background-repeat: no-repeat;
+  }
+  .header-columns {
+    /* display:flex; */
+    /* justify-content:space-between; */
+    grid-template-columns: 10% auto max-content;
+  }
+
+  .zx9-speaker-container {
+    background-size: 600px;
+    background-position: 50% -150px;
+  }
+
+  .home-zx7-speaker-bg {
+    background-image: url('../public/assets/home/mobile/image-speaker-zx7.jpg');
+    background-size: cover;
+    background-position: 0px -20px;
+    background-repeat: no-repeat;
+  }
+
+  .home-yx1-earphones-bg {
+    background-image: url('../public/assets/home/mobile/image-earphones-yx1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .about-company-bg {
+    content: url('../public/assets/shared/mobile/image-best-gear.jpg');
+  }
+
+  .Modal {
+    position: absolute;
+  }
+
+  .ModalOverlay {
+    position: absolute;
+    height: 100%;
+  }
+}
