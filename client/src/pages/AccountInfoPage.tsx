@@ -218,7 +218,6 @@ export default function AccountInfoPage() {
                 onButtonClick={(e) => onToggleEdit('email', e)}
                 isDisabled={isLoading}
               />
-              isDisabled={isLoading}
               <PrimaryButton text='Update' onButtonClick={updateAccountInfo} />
             </div>
           </form>
